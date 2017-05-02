@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body ng-app="lab12" ng-controller="labController">
+
+<header>
+  <h2>To Do List</h2>
+    <form class="form-inline">
+      <div class='form-group'>
+        <input type="text" class="form-control" id="taskAdd" ng-model="task.name">
+        <button type="submit" class="btn btn-primary" ng-click="addTask(task)">Add Task</button>
+      </div>
+    </form>
+</header>
+    <div id="listWrap" >
+        <p ng-repeat="index in toDoList track by $index"><img ng-click="removeTask(index)" src="redx.png">{{ index.name }}</p>
+    </div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="script.js"></script>
+</body>
+
+</html>
